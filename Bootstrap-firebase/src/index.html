@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Data base web</title>
+  <meta name="description" content="A basic HTML page following W3C standards">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./main.scss">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+
+  <header role="banner" data-testid="header">
+    <h1>Welcome to the database</h1>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" role="navigation">
+      <div class="container">
+        <!-- Navbar Brand (Logo or Title) -->
+        <a class="navbar-brand" href="">Welcome</a>
+    
+        <!-- Navbar Toggler for mobile navigation -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <!-- Navbar Links -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav" data-testid="nav-list">
+            <li class="nav-item" data-testid="nav-item">
+              <a class="nav-link" href="#home">Home</a>
+            </li>
+            <li class="nav-item" data-testid="nav-item">
+              <a class="nav-link" href="secondPage.html">Database</a>
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+  </header>
+
+  <main role="main" data-testid="main-content">
+    <section aria-label="Introduction" data-testid="introduction-section">
+      <h2>About This Page</h2>
+      <p>This is a basic webpage connected to firebase. Check accesability. 
+        Is ready to run cypress logic to run automatic tests</p>
+    </section>
+
+    <section aria-label="Content" data-testid="main-content-section">
+      <h2>Main Content</h2>
+      <p>You can find in the nav bar a database link that will 
+        take you to an interface where you can add and delete elements from 
+        a firebase database. Theyll be treated as documents in the plattform
+      </p>
+    </section>
+
+    <section aria-label="Contact Information" data-testid="contact-section">
+      <h2>Contact Us</h2>
+      <p>Contact information goes here.</p>
+    </section>
+  </main>
+
+  <footer role="contentinfo" id="contact" data-testid="footer">
+    <p>&copy; 2024 YourName. All rights reserved.</p>
+  </footer>
+
+  <script src="main.js"></script>
+  <script src="index.bundle.js"></script>
+  
+</body>
+</html>
