@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two Sections Page</title>
+    <style>
+        /* Add some basic styling for clarity */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .section {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        .title {
+            color: #333;
+        }
+        .content {
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+    <section class="section" id="section1">
+        <h1 class="title" id="title1">Section 1</h1>
+        <p class="content" id="content1">This is the content of section 1.</p>
+        <button id="botonUno">Make headers dissapear</button>
+    </section>
+
+    <section class="section" id="section2">
+        <h1 class="title" id="title2">Section 2</h1>
+        <p class="content" id="content2">This is the content of section 2.</p>
+    </section>
+    <input type="text" name="userInput" id="userInput">
+    <label for="contentSelector">Select what you wanto to change</label>
+    <select id="contentSelector">
+        <option value="title1">Title 1</option>
+        <option value="title2">Title 2</option>
+        <option value="paragraph1">Paragraph 1</option>
+        <option value="paragraph2">Paragraph 2</option>
+    </select>    
+    <button id="botonDos">change</button>
+<script src="/index.js"></script>
+<script src="/dist/bundle.js"></script>
+</body>
+</html>
