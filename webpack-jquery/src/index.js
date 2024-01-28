@@ -1,6 +1,7 @@
 import './main.scss';
 import $ from 'jquery';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Carousel } from 'bootstrap';
 
 const hideTitles = () => {
     const botonPrimero = $('#botonUno');
@@ -101,7 +102,46 @@ const fetchAndShowData = () => {
 
     fetchData();
 };
+const accordionFunction = function() {
+    $('.accordion-header').click(function() {
+      $(this).toggleClass('active').next('.accordion-content').slideToggle();
+      $('.accordion-content').not($(this).next()).slideUp();
+      $('.accordion-header').not(this).removeClass('active');
+    });
+  };
 
+  const carouselFunction = function() {
+    let currentIndex = 0;
+  
+    // Function to show a slide at a specific index
+    function showSlide(index) {
+      const totalSlides = $('.carousel-item').length;
+  
+      if (index < 0) {
+        index = totalSlides - 1;
+      } else if (index >= totalSlides) {
+        index = 0;
+      }
+  
+      $('.carousel-item').hide();
+      $('.carousel-item').eq(index).show();
+      currentIndex = index;
+    }
+  
+    // Show the initial slide when the page loads
+    showSlide(currentIndex);
+  
+    $('.next').click(function() {
+      showSlide(currentIndex + 1);
+    });
+  
+    $('.prev').click(function() {
+      showSlide(currentIndex - 1);
+    });
+  };
+  
+accordionFunction();
+carouselFunction();
 fetchAndShowData();
 hideTitles();
 changeContent();

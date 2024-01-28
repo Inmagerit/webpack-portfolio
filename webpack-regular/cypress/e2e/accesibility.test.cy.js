@@ -1,5 +1,4 @@
 import 'cypress-axe';
-// cypress/integration/e2e.spec.js
 describe('End-to-End Tests with Accessibility', () => {
     
   
@@ -11,7 +10,7 @@ describe('End-to-End Tests with Accessibility', () => {
       cy.injectAxe();
       cy.checkA11y();
       
-      //cy.get('your-selector').should('have.text', 'Expected Text');
+      
     });
     it('should navigate to the page and pass accessibility tests', () => {
     

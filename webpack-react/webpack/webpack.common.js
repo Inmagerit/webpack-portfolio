@@ -1,8 +1,8 @@
-const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-
+  mode: 'production',
   entry: {
     index: path.resolve(__dirname, '..', './src/index.tsx'),
     indexTwo: path.resolve(__dirname, '..', './src/indexTwo.tsx'),
@@ -36,7 +36,7 @@ module.exports = {
       },
       {
         test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
-        type: 'asset/resource',
+        type: 'asset',
       },
       {
         test: /\.(woff(2)?|eot|ttf|otf|svg|)$/,
@@ -55,9 +55,8 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, '..', './src/pageTwo.html'),
-      filename:'pageTwo.html'
+      filename: 'pageTwo.html',
     }),
- 
   ],
   stats: 'errors-only',
-}
+};

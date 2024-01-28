@@ -1,1 +1,18 @@
 *{text-align: center;}
+.accordion-content {
+    display: none;
+  }
+
+  .active {
+    background-color: #ddd;
+  }
+
+  .carousel-inner {
+    display: flex;
+    overflow: hidden;
+  }
+
+  .carousel-item {
+    flex: 0 0 100%;
+    display: none;
+  }

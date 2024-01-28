@@ -1,12 +1,16 @@
-import React from 'react';
-import './App.css'
+import React, { useState } from 'react';
+import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { useState } from 'react';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from './firebase';
-import SimpleCounter from './Gallery';
-import MyCardComponent from './cards';
-import MyComponent from './cards';
+import SimpleCounter from './SimpleCounter';
+
+import Carousel from './Carousel';
+import goyaUno from './images/Goya-1.jpg';
+import goyaDos from './images/Goya-2.jpg';
+import goyaTres from './images/Goya-3.jpg';
+import CardsComponent from './CardsComponent';
+import Accordion from './accordion'; 
 
 function App() {
   const [email, setEmail] = useState('');
@@ -25,19 +29,33 @@ function App() {
     }
   };
 
+  const sections = [
+    { title: 'First title  1', content: 'Content for Section 1' },
+    { title: 'Section 2', content: 'Content for Section 2' },
+    { title: 'Section 3', content: 'Content for Section 3' },
+  ];
+
+  const images = [goyaUno, goyaDos, goyaTres];
+
   return (
     <>
       <div>
-        <h1 id="main-heading" data-cy="main-heading">Welcome to the test app</h1>
+        <h1 id="main-heading" data-cy="main-heading">
+          Welcome to the test app
+        </h1>
         <h2 id="registration-heading">Register a user in Google Firebase</h2>
 
         <SimpleCounter data-cy="simple-counter" />
 
-        <MyComponent/>
+        <CardsComponent />
 
-        <h2 id="registration-heading" data-cy="registration-heading">Register a user in Google Firebase</h2>
+        <h2 id="registration-heading" data-cy="registration-heading">
+          Register a user in Google Firebase
+        </h2>
         <form className="App-form" data-cy="registration-form">
-          <label htmlFor="email-input" id="email-label">Email:</label>
+          <label htmlFor="email-input" id="email-label">
+            Email:
+          </label>
           <input
             type="email"
             id="email-input"
@@ -50,7 +68,9 @@ function App() {
             aria-labelledby="email-label"
           />
 
-          <label htmlFor="password-input" id="password-label">Password:</label>
+          <label htmlFor="password-input" id="password-label">
+            Password:
+          </label>
           <input
             type="password"
             id="password-input"
@@ -63,8 +83,16 @@ function App() {
             aria-labelledby="password-label"
           />
 
-          {msg === 'exito' && <span id="success-message" data-cy="success-message">Registration successful</span>}
-          {msg === 'error' && <span id="error-message" data-cy="error-message">Error occurred during registration</span>}
+          {msg === 'exito' && (
+            <span id="success-message" data-cy="success-message">
+              Registration successful
+            </span>
+          )}
+          {msg === 'error' && (
+            <span id="error-message" data-cy="error-message">
+              Error occurred during registration
+            </span>
+          )}
 
           <button
             onClick={registrar}
@@ -76,6 +104,16 @@ function App() {
             Register
           </button>
         </form>
+      </div>
+
+      <div>
+        <h1>Accordion</h1>
+        <Accordion sections={sections} />
+      </div>
+
+      <div>
+        <h1>Image Carousel</h1>
+        <Carousel images={images} />
       </div>
     </>
   );

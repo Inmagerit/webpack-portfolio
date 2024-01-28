@@ -39,3 +39,61 @@ $.ajax({
     console.error('Error fetching data', error);
   }
 })
+
+// to-do Dynamics
+function setupList() {
+  function addTask() {
+      var taskText = $("#taskInput").val();
+      if (taskText.trim() !== "") {
+          var listItem = $("<li>").text(taskText);
+          $("#taskList").append(listItem);
+          $("#taskInput").val("");
+          attachTaskClickEvent(listItem);
+          saveTasksToSession(); // Save tasks to session storage
+      }
+  }
+
+  function toggleTaskStatus() {
+      $(this).toggleClass("completed");
+      saveTasksToSession(); // Save tasks to session storage when task status is toggled
+  }
+
+  function attachTaskClickEvent(task) {
+      task.on("click", toggleTaskStatus);
+  }
+
+  function saveTasksToSession() {
+      var tasks = $("#taskList").html();
+      sessionStorage.setItem("tasks", tasks);
+  }
+
+  // Restore tasks from session storage on page load
+  function restoreTasksFromSession() {
+      var tasks = sessionStorage.getItem("tasks");
+      if (tasks) {
+          $("#taskList").html(tasks);
+          // Attach click event to restored tasks
+          $("#taskList li").each(function () {
+              attachTaskClickEvent($(this));
+          });
+      }
+  }
+
+  $("#addTask").on("click", addTask);
+
+  $("#taskInput").keypress(function (e) {
+      if (e.which === 13) {
+          addTask();
+      }
+  });
+  function eraseAllTasks ()  {
+    $('#eraseAll').on('click', () =>{
+    $("#taskList").empty(); // Remove all tasks from the list
+    sessionStorage.removeItem("tasks");
+    }) // Clear tasks from session storage
+};
+
+  // Attach click event to existing tasks
+  eraseAllTasks()
+  restoreTasksFromSession();}
+setupList()

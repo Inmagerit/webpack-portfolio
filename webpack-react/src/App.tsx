@@ -7,6 +7,8 @@ import { CardsOne } from './cards';
 import $ from 'jquery';
 
 
+
+
 export const App = () => {
     
     return  <>
@@ -21,7 +23,7 @@ export const App = () => {
         I added some gifs and svgs. These lasts should resize perfectly with the screen.  </p>
     <CardsOne/>
     <a href="./pageTwo.html">
-<button type="button" className="btn btn-danger">go page two</button>
+<button type="button" className="btn btn-danger" id='botonCinco'>go page two</button>
 </a>
     </>
 }
@@ -39,8 +41,9 @@ export const AppTwo = () =>{
     <div id='apiDiv'></div>
 
     </div>
+
         <a href="./index.html">
-<button type="button" className="btn btn-danger">go back home</button>
+<button type="button" className="btn btn-danger" id='botonSeis'>go back home</button>
 </a>
     </>
 }
