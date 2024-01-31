@@ -173,20 +173,23 @@ loginForm.addEventListener('submit', (e) => {
     .then(cred => {
       console.log('user logged in:', cred.user)
       loginForm.reset()
+      
     })
     .catch(err => {
       console.log(err.message)
     })
 })
-// subscribing to auth changes
+/* subscribing to auth changes
 onAuthStateChanged(auth, (user) => {
+  
   if (user) {
     // User is logged in
     alert('User logged in. User details:', user);
   } else {
     // User is logged out
     alert('User logged out.');
-  }
-})
+  
+}
+})*/
 displayBooks()
 

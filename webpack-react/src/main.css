@@ -1,6 +1,7 @@
 body{
     margin: 0;
     padding: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 .card-title, *{
     background-color: rgb(150, 0, 0);
@@ -26,7 +27,9 @@ body{
     height: 'auto'
 }
 
-h1 p {
-    font-size: larger;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+ p {
+    font-size:x-large;
+    padding: 2em;
+    
 }
+h1{padding: 2em;}

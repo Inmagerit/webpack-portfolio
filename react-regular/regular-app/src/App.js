@@ -5,12 +5,12 @@ import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from './firebase';
 import SimpleCounter from './SimpleCounter';
 
-import Carousel from './Carousel';
+import Carousel from './components/Carousel';
 import goyaUno from './images/Goya-1.jpg';
 import goyaDos from './images/Goya-2.jpg';
 import goyaTres from './images/Goya-3.jpg';
-import CardsComponent from './CardsComponent';
-import Accordion from './accordion'; 
+import CardsComponent from './components/CardsComponent';
+import Accordion from './components/accordion'; 
 
 function App() {
   const [email, setEmail] = useState('');
@@ -41,15 +41,22 @@ function App() {
     <>
       <div>
         <h1 id="main-heading" data-cy="main-heading">
-          Welcome to the test app
+          Welcome to the App
         </h1>
-        <h2 id="registration-heading">Register a user in Google Firebase</h2>
+        <p>This web App was built using react <br/>
+        native tools, so created using npx-create-react-app<br/>
+        It displays simple functionality seen in others of my<br/>
+        pages, but for showing i can handle them with react syntax<br/>
+        and react native tools, i display functionality<br/>
+        to create a user, i display a counter, an accordion<br/>
+        and an image Carousel. find also some bootstrap cards  </p>
+        
 
         <SimpleCounter data-cy="simple-counter" />
 
         <CardsComponent />
 
-        <h2 id="registration-heading" data-cy="registration-heading">
+        <h2 id="registration-heading">
           Register a user in Google Firebase
         </h2>
         <form className="App-form" data-cy="registration-form">
